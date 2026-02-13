@@ -1,7 +1,4 @@
-
-#:schema https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json
-# wrangler.toml
-name = 'valentine'
+name = "valentine"
 compatibility_date = "2026-02-13"
 pages_build_output_dir = "."
 
