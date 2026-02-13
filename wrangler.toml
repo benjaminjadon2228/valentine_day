@@ -1,0 +1,3 @@
+[[kv_namespaces]]
+binding = "SHARE_KV"
+id = "VALENTINE_STORAGE"
