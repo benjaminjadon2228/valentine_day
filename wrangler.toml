@@ -4,4 +4,4 @@ pages_build_output_dir = "."
 
 [[kv_namespaces]]
 binding = "SHARE_KV"
-id = "VALENTINE_STORAGE"
+id = "30f5960bbd1c4a25a9ecb94c4c066a8f"
