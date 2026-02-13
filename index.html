@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="theme-cute">
+    <div class="love-hangings" aria-hidden="true">
+      <span>love</span>
+      <span>amour</span>
+      <span>xo</span>
+      <span>forever</span>
+      <span>sweetheart</span>
+      <span>my love</span>
+      <span>be mine</span>
+      <span>hugs</span>
+      <span>always</span>
+    </div>
+
+    <main class="app">
+      <section class="card lock-card hidden" id="lock-screen">
+        <p class="eyebrow">Private Love Card</p>
+        <h2>Enter Unlock Code</h2>
+        <p class="hint">This Valentine page is protected.</p>
+        <input id="unlock-input" type="password" placeholder="Enter code" />
+        <button id="unlock-btn" class="small-btn" type="button">Unlock</button>
+        <p id="unlock-error" class="lock-error"></p>
+      </section>
+
+      <section class="card intro-card" id="question-card">
+        <p class="eyebrow">Valentine's Day</p>
+        <h1>Will You Be My Valentine?</h1>
+        <p class="sub">You have only one correct answer.</p>
+
+        <div class="countdown" role="status" aria-live="polite">
+          <div class="time-box"><span class="time-num cd-days">0</span><span class="time-label">Days</span></div>
+          <div class="time-box"><span class="time-num cd-hours">0</span><span class="time-label">Hours</span></div>
+          <div class="time-box"><span class="time-num cd-minutes">0</span><span class="time-label">Minutes</span></div>
+          <div class="time-box"><span class="time-num cd-seconds">0</span><span class="time-label">Seconds</span></div>
+        </div>
+
+        <div class="buttons-wrap" id="buttons-wrap">
+          <button id="yes-btn" class="btn yes">Yes 💖</button>
+          <button id="no-btn" class="btn no">No 😢</button>
+        </div>
+      </section>
+
+      <section class="card celebration-card hidden" id="celebration-card">
+        <h2>You said YES! 💞</h2>
+        <p>Your personalized love page is ready.</p>
+
+        <div class="yes-layout">
+          <section class="panel yes-block">
+            <h4>Message For You</h4>
+            <div class="message-stage">
+              <div class="sketchbook" id="sketchbook">
+                <div class="paper-pin" aria-hidden="true"></div>
+                <h3 id="sketch-title">Our Little Love Sketchbook</h3>
+                <p id="sketch-message">
+                  Dear Valentine,<br />
+                  Let’s fill this year with tiny adventures, warm coffee, shared laughs,
+                  and endless hugs.
+                </p>
+                <p class="sign" id="sketch-sign">Yours, Always ❤️</p>
+              </div>
+            </div>
+            <div class="editor-grid compact-grid">
+              <div>
+                <label class="field-label" for="to-name">To</label>
+                <input id="to-name" type="text" placeholder="Partner name" maxlength="40" />
+              </div>
+              <div>
+                <label class="field-label" for="from-name">From</label>
+                <input id="from-name" type="text" placeholder="Your name" maxlength="40" />
+              </div>
+            </div>
+            <label class="field-label" for="message-input">Message</label>
+            <textarea id="message-input" rows="4" placeholder="Write your love message..."></textarea>
+            <button id="apply-message" class="small-btn" type="button">Apply Message</button>
+          </section>
+
+          <section class="panel yes-block">
+            <h4>Memories</h4>
+            <label class="field-label" for="memory-upload">Upload photos</label>
+            <input id="memory-upload" type="file" accept="image/*" multiple />
+            <p class="hint small" id="memory-count">0/18 memories selected</p>
+            <div id="memory-gallery" class="memory-gallery"></div>
+          </section>
+
+          <section class="panel yes-block">
+            <h4>Favorite Song</h4>
+            <label class="field-label" for="spotify-url">Paste Spotify track link</label>
+            <input id="spotify-url" type="text" placeholder="https://open.spotify.com/track/..." />
+            <div class="actions-row">
+              <button id="set-spotify" class="small-btn" type="button">Set Spotify Song</button>
+              <span id="song-name" class="status">No Spotify song selected</span>
+            </div>
+            <div id="spotify-player" class="spotify-player hidden"></div>
+          </section>
+
+          <section class="panel yes-block">
+            <h4>Theme + Countdown</h4>
+            <label class="field-label" for="theme-select">Choose theme</label>
+            <select id="theme-select">
+              <option value="cute">Cute</option>
+              <option value="rose-garden">Rose Garden</option>
+              <option value="moonlight-love">Moonlight Love</option>
+            </select>
+            <div class="actions-row">
+              <button id="melody-toggle" class="small-btn" type="button">Melody On</button>
+              <span id="melody-status" class="status">Soft romantic background melody</span>
+            </div>
+            <div class="countdown">
+              <div class="time-box"><span class="time-num cd-days">0</span><span class="time-label">Days</span></div>
+              <div class="time-box"><span class="time-num cd-hours">0</span><span class="time-label">Hours</span></div>
+              <div class="time-box"><span class="time-num cd-minutes">0</span><span class="time-label">Minutes</span></div>
+              <div class="time-box"><span class="time-num cd-seconds">0</span><span class="time-label">Seconds</span></div>
+            </div>
+          </section>
+
+          <section class="panel yes-block">
+            <h4>Send to Someone</h4>
+            <label class="field-label" for="lock-code">Set unlock code for receiver</label>
+            <input id="lock-code" type="text" placeholder="example: ourspecial123" />
+            <p class="hint small">After setting lock/message/images/song, create and share the generated link below.</p>
+            <div class="actions-row wrap">
+              <button id="make-link" class="small-btn" type="button">Create Share Link</button>
+              <button id="copy-link" class="small-btn" type="button">Copy Link</button>
+              <button id="copy-note" class="small-btn" type="button">Copy Message</button>
+              <button id="send-mail" class="small-btn" type="button">Send Email</button>
+              <button id="send-whatsapp" class="small-btn" type="button">Send WhatsApp</button>
+              <button id="download-card" class="small-btn" type="button">Download Love Card</button>
+            </div>
+            <input id="share-output" type="text" readonly placeholder="Share link will appear here" />
+            <p class="hint small" id="share-status">Create a share link after your edits.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="heart-splash hidden" id="heart-splash" aria-hidden="true"></div>
+    <div class="page-loader hidden" id="page-loader" aria-live="polite">
+      <div class="loader-ring">
+        <div class="loader-heart">💗</div>
+      </div>
+      <div class="loader-splash-heart">💖</div>
+      <p>Loading love...</p>
+    </div>
+    <div id="floating-hearts" aria-hidden="true"></div>
+    <div id="flower-bursts" aria-hidden="true"></div>
+    <div id="image-modal" class="image-modal hidden" aria-hidden="true">
+      <button id="close-image-modal" class="image-modal-close" type="button">×</button>
+      <img id="image-modal-content" alt="Memory preview" />
+    </div>
+    <audio id="auto-bg-music" src="assets/First-Sight.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
