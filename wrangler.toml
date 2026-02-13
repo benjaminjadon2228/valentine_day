@@ -1,3 +1,8 @@
+
+#:schema https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json
+name = "be-my-valentine"
+compatibility_date = "2026-02-13"
+
 [[kv_namespaces]]
 binding = "SHARE_KV"
 id = "VALENTINE_STORAGE"
